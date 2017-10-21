@@ -59,11 +59,13 @@ fxLayoutGap="10px">
           <mat-slide-toggle formControlName="agree">May we contact you</mat-slide-toggle>
         </td>
         <td>
-          <mat-select aria-placeholder="How?" formControlName="contacttype">
-            <mat-option *ngFor="let ctype of contactType" [value]="ctype">
-              {{ctype}}
-            </mat-option>
-          </mat-select>
+          <mat-form-field>
+            <mat-select placeholder="How?">
+              <mat-option *ngFor="let ctype of contactType" [value]="ctype">
+                {{ ctype }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </td>
       </table>
       <p>
