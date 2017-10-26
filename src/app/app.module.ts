@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatDialogModule, MatButtonModule,MatInputModule, MatCheckboxModule, MatGridListModule, MatSelectModule, MatCardModule, MatSlideToggleModule} from '@angular/material';
+import { MatToolbarModule, MatDialogModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatGridListModule, MatSelectModule, MatCardModule, MatSlideToggleModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSliderModule} from '@angular/material';
 import 'hammerjs';
 
 
@@ -25,6 +26,9 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+
+import { baseURL } from './shared/baseUrl';
+import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 
 
@@ -48,6 +52,7 @@ import { LoginComponent } from './login/login.component';
     MatSlideToggleModule,
     MatSelectModule,
     HttpModule,
+    MatFormFieldModule,
     MatInputModule,
     MatToolbarModule, 
     MatButtonModule,
@@ -56,6 +61,7 @@ import { LoginComponent } from './login/login.component';
     MatCheckboxModule,
     MatDialogModule,
     FlexLayoutModule,
+    MatSliderModule,
     AppRoutingModule
     // MatDialog,
     // MatDialogRef
@@ -63,7 +69,10 @@ import { LoginComponent } from './login/login.component';
   providers: [
     DishService,
     PromotionService,
-    LeaderService],
+    LeaderService,
+    {provide: 'baseURL', useValue: baseURL},
+    ProcessHttpmsgService
+  ],
   entryComponents: [
     LoginComponent
   ],
