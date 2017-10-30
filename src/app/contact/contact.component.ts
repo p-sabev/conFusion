@@ -19,7 +19,8 @@ export class ContactComponent implements OnInit {
 
   feedbackForm: FormGroup;
   feedback: Feedback;
-  //contactType: ContactType;
+  
+  contactType = ['email', 'phone'];
 
   formErrors = {
     'firstname': '',
